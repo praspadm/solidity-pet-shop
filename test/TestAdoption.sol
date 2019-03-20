@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.0;
 
 //global Truffle files, not a truffle directory. You should not see a truffle directory inside your test/ directory.
 // disregard compiler errors
@@ -26,7 +26,7 @@ contract TestAdoption {
     function testGetAdopterAddressByPetId() public {
         // expected owner is this contract
         //Since the TestAdoption contract will be sending the transaction, we set the expected value to this
-        address expected = this;
+        address expected = address(this);
 
         address adopter = adoption.adopters(4);
 
@@ -36,7 +36,7 @@ contract TestAdoption {
     // Testing retrieval of all pet owners
     function testGetAdopterAddressByPetIdInArray() public {
         // Expected owner is this contract
-        address expected = this;
+        address expected = address(this);
         // Store adopters in memory rather than contract's storage
         //The memory attribute tells Solidity to temporarily store the value in memory, rather than saving it to the contract's storage. 
         address[16] memory adopters = adoption.getAdopters();

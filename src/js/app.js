@@ -33,7 +33,7 @@ App = {
     } else {
       // If no injected web3 instance is detected, fall back to Ganache (7445 or Truffle Develop 9545)
       // this fallback is fine for development environments, but insecure and not suitable for production.
-      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:9545');
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
     }
     web3 = new Web3(App.web3Provider);
 

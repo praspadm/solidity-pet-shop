@@ -1,5 +1,5 @@
 //The minimum version of Solidity required 
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.0;
 
 contract Adoption {
     //type is address and the length is 16
@@ -17,7 +17,7 @@ contract Adoption {
     }
 
     // Retrieving the adopters
-    function getAdopters() public view returns (address[16]) {
+    function getAdopters() public view returns (address[16] memory) {
         // Since adopters is already declared, we can simply return it. Be sure to specify the return type as address[16].
         return adopters;
     }
